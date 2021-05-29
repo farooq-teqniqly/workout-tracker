@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { MaterialModule } from './ui/material/material/material.module';
+import { MaterialModule } from './ui/material/material.module';
 
 @NgModule({
   declarations: [
