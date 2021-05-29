@@ -3,16 +3,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'wt-sidenav-list',
   templateUrl: './sidenav-list.component.html',
-  styleUrls: ['./sidenav-list.component.css']
+  styleUrls: ['./sidenav-list.component.css'],
 })
 export class SidenavListComponent implements OnInit {
   @Output()
   closeSidenav = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onCloseSidenav() {
     this.closeSidenav.emit();

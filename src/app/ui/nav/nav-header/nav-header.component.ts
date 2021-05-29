@@ -3,19 +3,17 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'wt-nav-header',
   templateUrl: './nav-header.component.html',
-  styleUrls: ['./nav-header.component.css']
+  styleUrls: ['./nav-header.component.css'],
 })
 export class NavHeaderComponent implements OnInit {
   @Output()
   sidenavToggle = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onToggleSidenav() {
     this.sidenavToggle.emit();
   }
-
 }

@@ -8,17 +8,9 @@ import { SidenavListComponent } from './ui/nav/sidenav-list/sidenav-list.compone
 import { UiModule } from './ui/ui.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavHeaderComponent,
-    SidenavListComponent
-  ],
-  imports: [
-    BrowserModule,
-    MaterialModule,
-    UiModule
-  ],
+  declarations: [AppComponent, NavHeaderComponent, SidenavListComponent],
+  imports: [BrowserModule, MaterialModule, UiModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
