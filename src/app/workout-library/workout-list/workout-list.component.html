@@ -1,0 +1,4 @@
+<h1>Workouts</h1>
+<div *ngFor="let workout of workouts$ | async">
+  <wt-workout-list-item [workout]="workout"></wt-workout-list-item>
+</div>
