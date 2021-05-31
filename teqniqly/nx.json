@@ -25,6 +25,9 @@
     "workout-tracker-e2e": {
       "tags": [],
       "implicitDependencies": ["workout-tracker"]
+    },
+    "material": {
+      "tags": []
     }
   }
 }
