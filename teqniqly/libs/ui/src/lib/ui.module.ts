@@ -6,13 +6,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 
 @NgModule({
   imports: [CommonModule, MaterialModule],
-  declarations: [
-    NavHeaderComponent,
-    SidenavListComponent
-  ],
-  exports: [
-    NavHeaderComponent,
-    SidenavListComponent
-  ],
+  declarations: [NavHeaderComponent, SidenavListComponent],
+  exports: [NavHeaderComponent, SidenavListComponent],
 })
 export class UiModule {}

@@ -19,6 +19,12 @@ import { ExerciseListComponent } from './exercise-list/exercise-list.component';
     ExerciseListItemComponent,
     ExerciseListComponent,
   ],
-  exports: [WorkoutLibraryComponent, PhaseListComponent, PhaseListItemComponent, ExerciseListItemComponent, ExerciseListComponent],
+  exports: [
+    WorkoutLibraryComponent,
+    PhaseListComponent,
+    PhaseListItemComponent,
+    ExerciseListItemComponent,
+    ExerciseListComponent,
+  ],
 })
 export class FeatureWorkoutLibraryModule {}

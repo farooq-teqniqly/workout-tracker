@@ -8,9 +8,8 @@ describe('PhaseListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PhaseListComponent ]
-    })
-    .compileComponents();
+      declarations: [PhaseListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
