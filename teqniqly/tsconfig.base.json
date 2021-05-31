@@ -17,7 +17,10 @@
     "paths": {
       "@teqniqly/material": ["libs/material/src/index.ts"],
       "@teqniqly/ui": ["libs/ui/src/index.ts"],
-      "@teqniqly/models": ["libs/models/src/index.ts"]
+      "@teqniqly/models": ["libs/models/src/index.ts"],
+      "@teqniqly/feature/workout-library": [
+        "libs/feature/workout-library/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

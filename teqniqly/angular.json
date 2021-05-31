@@ -219,6 +219,31 @@
           }
         }
       }
+    },
+    "feature-workout-library": {
+      "projectType": "library",
+      "root": "libs/feature/workout-library",
+      "sourceRoot": "libs/feature/workout-library/src",
+      "prefix": "teqniqly",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature/workout-library"],
+          "options": {
+            "jestConfig": "libs/feature/workout-library/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature/workout-library/src/**/*.ts",
+              "libs/feature/workout-library/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
