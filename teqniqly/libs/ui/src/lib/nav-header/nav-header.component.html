@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button color="accent" (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div><a href="#">LOGO</a></div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="50px" class="navigation-items">
+      <li><a href="#">My Workouts</a></li>
+      <li><a href="#">Workout Library</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+  </div>
+</mat-toolbar>

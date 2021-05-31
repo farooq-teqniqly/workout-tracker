@@ -50,7 +50,10 @@
               "apps/workout-tracker/src/favicon.ico",
               "apps/workout-tracker/src/assets"
             ],
-            "styles": ["apps/workout-tracker/src/styles.css"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/workout-tracker/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -170,6 +173,28 @@
               "libs/material/src/**/*.ts",
               "libs/material/src/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "teqniqly",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         }
       }
