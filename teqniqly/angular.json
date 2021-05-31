@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "workout-tracker",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
+    }
+  },
+  "projects": {
+    "workout-tracker": {
+      "projectType": "application",
+      "root": "apps/workout-tracker",
+      "sourceRoot": "apps/workout-tracker/src",
+      "prefix": "teqniqly",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/workout-tracker",
+            "index": "apps/workout-tracker/src/index.html",
+            "main": "apps/workout-tracker/src/main.ts",
+            "polyfills": "apps/workout-tracker/src/polyfills.ts",
+            "tsConfig": "apps/workout-tracker/tsconfig.app.json",
+            "assets": [
+              "apps/workout-tracker/src/favicon.ico",
+              "apps/workout-tracker/src/assets"
+            ],
+            "styles": ["apps/workout-tracker/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/workout-tracker/src/environments/environment.ts",
+                  "with": "apps/workout-tracker/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "workout-tracker:build:production"
+            },
+            "development": {
+              "browserTarget": "workout-tracker:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "workout-tracker:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/workout-tracker/src/**/*.ts",
+              "apps/workout-tracker/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/workout-tracker"],
+          "options": {
+            "jestConfig": "apps/workout-tracker/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "workout-tracker-e2e": {
+      "root": "apps/workout-tracker-e2e",
+      "sourceRoot": "apps/workout-tracker-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/workout-tracker-e2e/cypress.json",
+            "tsConfig": "apps/workout-tracker-e2e/tsconfig.e2e.json",
+            "devServerTarget": "workout-tracker:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "workout-tracker:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/workout-tracker-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
