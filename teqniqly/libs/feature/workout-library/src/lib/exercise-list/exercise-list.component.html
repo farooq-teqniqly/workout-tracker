@@ -1,0 +1,6 @@
+<h1>Exercises</h1>
+<div *ngFor="let exercise of exercises$ | async">
+  <teqniqly-exercise-list-item
+    [exercise]="exercise"
+  ></teqniqly-exercise-list-item>
+</div>

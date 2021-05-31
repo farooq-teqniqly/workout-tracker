@@ -5,6 +5,8 @@ import { WorkoutListItemComponent } from './workout-list-item/workout-list-item.
 import { WorkoutLibraryComponent } from './workout-library/workout-library.component';
 import { PhaseListComponent } from './phase-list/phase-list.component';
 import { PhaseListItemComponent } from './phase-list-item/phase-list-item.component';
+import { ExerciseListItemComponent } from './exercise-list-item/exercise-list-item.component';
+import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -14,7 +16,9 @@ import { PhaseListItemComponent } from './phase-list-item/phase-list-item.compon
     WorkoutLibraryComponent,
     PhaseListComponent,
     PhaseListItemComponent,
+    ExerciseListItemComponent,
+    ExerciseListComponent,
   ],
-  exports: [WorkoutLibraryComponent, PhaseListComponent, PhaseListItemComponent],
+  exports: [WorkoutLibraryComponent, PhaseListComponent, PhaseListItemComponent, ExerciseListItemComponent, ExerciseListComponent],
 })
 export class FeatureWorkoutLibraryModule {}
